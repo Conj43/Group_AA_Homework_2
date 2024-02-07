@@ -19,6 +19,8 @@ public class Student {
 		
 
 
+	
+
 	public int getId() {
 		return id;
 	}
@@ -53,6 +55,9 @@ public class Student {
 	public String toString() {
 		return "Student [id=" + id + ", name=" + name + ", grade=" + grade + "]";
 	}
+	
+	
+
 
 	
 	
