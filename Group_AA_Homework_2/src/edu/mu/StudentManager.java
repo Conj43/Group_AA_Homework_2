@@ -6,7 +6,7 @@ import java.io.FileNotFoundException;
 
 public class StudentManager {
 	
-	private Student[] studentArray;
+	public Student[] studentArray = new Student[5];
 
 	public StudentManager() {
 		
@@ -27,7 +27,8 @@ public class StudentManager {
 			currentId = student.getId();
 			if(currentId == id) {
 				value = true;
-				student.toString();
+				String info = student.toString();
+				System.out.println(info);
 			}
 		}
 		if(!value) {
@@ -44,14 +45,18 @@ public boolean readFromFile(String fileName)
 	try
 	{
 		Scanner scan = new Scanner(new FileInputStream(fileName));
+		int i = 0;
 		
-		
-		for(int i = 0; i < 5; i++)
+		while(scan.hasNextLine())
 		{
 			int id = scan.nextInt();
-			String name = scan.next();
+			String firstName = scan.next();
+			String lastName = scan.next();
 			double grade = scan.nextDouble();
-			scan.next();
+
+			scan.nextLine();
+			
+			String name = firstName + " " + lastName;
 			
 			Student student = new Student();
 			student.setId(id);
@@ -60,6 +65,7 @@ public boolean readFromFile(String fileName)
 			
 			studentArray[i] = student;
 			student.toString();
+			i++;
 			
 		}
 		

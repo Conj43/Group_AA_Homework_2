@@ -10,15 +10,28 @@ public class Main {
 		
 		StudentManager manager = new StudentManager();
 		
-		
-		
-		try {
-			boolean fileStatus = manager.readFromFile("studentData.txt");
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		boolean fileStatus = false;
 
+        
+        String name = "studentData.txt";
+		
+		fileStatus = manager.readFromFile(name);
+		
+		System.out.println(fileStatus);
+		
+		boolean status = false;
+		
+		 status =manager.searchStudentById(101);
+		
+		 status =manager.searchStudentById(102);
+		
+		 status =manager.searchStudentById(103);
+		
+		 status =manager.searchStudentById(104);
+		
+		 status =manager.searchStudentById(105);
+		
+		 
 	}
 
 }
