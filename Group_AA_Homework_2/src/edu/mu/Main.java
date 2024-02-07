@@ -20,7 +20,7 @@ public class Main {
 			boolean studentGradeUpdateStatus = studentManager.updateStudentGradeById(102, 95);
 			// Display all students after the update.
 			studentManager.displayStudents();
-		
+		 
 
 	}
 
