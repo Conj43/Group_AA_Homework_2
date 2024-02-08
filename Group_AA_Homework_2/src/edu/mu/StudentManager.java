@@ -6,35 +6,34 @@ import java.io.FileNotFoundException;
 
 public class StudentManager {
 	
-	public Student[] studentArray = new Student[5];
+	public Student[] studentArray = new Student[5]; //creates an array of type Student
 
 	public StudentManager() {
-		
-		
 		
 	}
 	
 
 	
 	
-	
+	//searchStudentById receives an int that is a valid id number and then uses that int to locate if
+	//that student exists in the class, if found it will return true, it also prints out the students info
 	
 	public boolean searchStudentById(int id) {
 		int currentId;
-		boolean value = false;
+		boolean value = false; //defaults to returning false
 		
-		for(Student student : studentArray) {
-			currentId = student.getId();
-			if(currentId == id) {
-				value = true;
-				String info = student.toString();
+		for(Student student : studentArray) { //goes through each student in the array
+			currentId = student.getId(); //sets currentId to whichever student is currently being looked at
+			if(currentId == id) { //if the id is found it enters
+				value = true; //sets the boolean return to true
+				String info = student.toString(); //prints out the students info
 				System.out.println(info);
 			}
 		}
-		if(!value) {
+		if(!value) { //handles if the student is not found
 			System.out.println("Error, Student cannot be found!");
 		}
-		return value;
+		return value; //returns true or false
 	}
 
 
