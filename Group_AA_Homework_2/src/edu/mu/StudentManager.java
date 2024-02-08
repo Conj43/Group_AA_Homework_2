@@ -13,7 +13,7 @@ public class StudentManager {
 	}
 	
 
-	
+	//now  make changes, after you make changes do this
 	
 	//searchStudentById receives an int that is a valid id number and then uses that int to locate if
 	//that student exists in the class, if found it will return true, it also prints out the students info
