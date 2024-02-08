@@ -16,7 +16,7 @@ public class StudentManager {
 		        return null; // Student not found
 		    
 	}
-	// using the id we just got to identify the student we are going to update their grade
+	// using the id we just got to identify the student we are going to update their grade 
 	public boolean updateStudentGradeById(int id, double grade) {
         Student student = search(id);
         if (student != null) {
