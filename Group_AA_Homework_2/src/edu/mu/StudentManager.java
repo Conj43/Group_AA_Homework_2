@@ -75,11 +75,21 @@ public boolean readFromFile(String fileName)
 		e.printStackTrace(); //if try fails it will print error
 		return false; //if the file is not read correctly it will return false
 	}
-	
-	
-	
-	
-	
-}
-
+				}
+//Display for Students:
+//method to display the details of all students in the current StudentManager class
+public void displayStudents() {
+	if (studentArray.length == 0) {
+		System.out.println("No Students found."); //checks if the array is empty or not. Outputs this error message if so 
+	} else 
+	{
+		for (Student student : studentArray) {
+			if (student != null) {
+				System.out.println(student.toString());			
+				
+			
+				}
+			}
+		}
+	}
 }
