@@ -44,36 +44,37 @@ public boolean readFromFile(String fileName)
 	
 	try
 	{
-		Scanner scan = new Scanner(new FileInputStream(fileName));
-		int i = 0;
+		Scanner scan = new Scanner(new FileInputStream(fileName)); //sets new scanner object that reads from fileName
+		int i = 0; // increment value to assign students to the array
 		
-		while(scan.hasNextLine())
+		while(scan.hasNextLine()) //goes until the end of the file is reached
 		{
-			int id = scan.nextInt();
-			String firstName = scan.next();
-			String lastName = scan.next();
-			double grade = scan.nextDouble();
+			int id = scan.nextInt(); //grabs the ID from the line
+			String firstName = scan.next(); //grabs the students first name
+			String lastName = scan.next();  //grabs the students last name
+			double grade = scan.nextDouble(); //grabs the students grade
 
-			scan.nextLine();
+			scan.nextLine(); //uses up the next line character
 			
-			String name = firstName + " " + lastName;
+			String name = firstName + " " + lastName; //Concatenates the first and last name
 			
-			Student student = new Student();
+			Student student = new Student(); //makes a student object for each input
+			//sets all information for the student
 			student.setId(id);
 			student.setName(name);
 			student.setGrade(grade);
 			
-			studentArray[i] = student;
-			student.toString();
-			i++;
+			studentArray[i] = student; //puts each student into the array
+			student.toString(); //prints out the current student
+			i++; //increments the position in the array for next time
 			
 		}
 		
-		return true;
+		return true; //if all information is found correct it returns true
 	}catch(FileNotFoundException e)
 	{
-		e.printStackTrace();
-		return false;
+		e.printStackTrace(); //if try fails it will print error
+		return false; //if the file is not read correctly it will return false
 	}
 	
 	
