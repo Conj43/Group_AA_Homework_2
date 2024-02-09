@@ -75,18 +75,19 @@ public boolean readFromFile(String fileName)
 		e.printStackTrace(); //if try fails it will print error
 		return false; //if the file is not read correctly it will return false
 	}
+}
 	
 		// TODO Auto-generated constructor stub
 		
 		 public Student search(int id) {
 			 // using a loop to iterate through the students to find the right one
-			 for (Student student : students) {
+			 for (Student student : studentArray) {
 				 if (student.getId() == id) {
 					 return student; // find the right student using their id
 					 }
 				 }
-			 }
-		        return null; // Student not found
+			 
+		        return null;} // Student not found
 		    
 	
 	// using the id we just got to identify the student we are going to update their grade 
@@ -103,6 +104,6 @@ public boolean readFromFile(String fileName)
 	
 	
 	
-}
+
 
 }
