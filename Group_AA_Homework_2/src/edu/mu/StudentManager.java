@@ -12,8 +12,6 @@ public class StudentManager {
 		
 	}
 	
-
-	
 	
 	//searchStudentById receives an int that is a valid id number and then uses that int to locate if
 	//that student exists in the class, if found it will return true, it also prints out the students info
@@ -34,7 +32,7 @@ public class StudentManager {
 			System.out.println("Error, Student cannot be found!");
 		}
 		return value; //returns true or false
-	}
+		}
 
 
 
@@ -78,8 +76,10 @@ public boolean readFromFile(String fileName)
 
 }
 	
-		// TODO Auto-generated constructor stub
-		
+
+		//search method used by updateStudentGradeByID
+		//made this function because it returns type Student, which makes more sense than returning type boolean 
+
 		 public Student search(int id) {
 			 // using a loop to iterate through the students to find the right one
 			 for (Student student : studentArray) {
@@ -88,12 +88,15 @@ public boolean readFromFile(String fileName)
 					 }
 				 }
 			 
-		        return null;} // Student not found
+
+		        return null; // Student not found
+		       } 
+
 		    
 	
 	// using the id we just got to identify the student we are going to update their grade 
 	public boolean updateStudentGradeById(int id, double grade) {
-        Student student = search(id);
+        Student student = search(id); //call the search function that returns a Student
         if (student != null) {
             student.setGrade(grade);
             return true; // Student found and updated
@@ -103,6 +106,7 @@ public boolean readFromFile(String fileName)
 
 
 			}
+
 //Display for Students:
 //method to display the details of all students in the current StudentManager class
 public void displayStudents() {
@@ -110,7 +114,7 @@ public void displayStudents() {
 		System.out.println("No Students found."); //checks if the array is empty or not. Outputs this error message if so 
 	} else 
 	{
-		for (Student student : studentArray) {
+		for (Student student : studentArray) { //loop through each element in the array and use toString method to print their info
 			if (student != null) {
 				System.out.println(student.toString());			
 				

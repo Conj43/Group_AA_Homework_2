@@ -2,34 +2,23 @@ package edu.mu;
 
 public class Main {
 
-	public Main() {
-		// TODO Auto-generated constructor stub
-	}
+
 
 	public static void main(String[] args) {
 		
-		StudentManager manager = new StudentManager();
 		
-		boolean fileStatus = false;
-
-        
-        String name = "studentData.txt";
-		
-		fileStatus = manager.readFromFile(name);
-		
-		System.out.println(fileStatus);
-		
-		boolean status = false;
-		
-		 status =manager.searchStudentById(101);
-		
-		 status =manager.searchStudentById(102);
-		
-		 status =manager.searchStudentById(103);
-		
-		 status =manager.searchStudentById(104);
-		
-		 status =manager.searchStudentById(105);
+		// Instantiate StudentManager, perform operations based on the requirements.
+		StudentManager studentManager = new StudentManager();
+		// Read student data from a file and initialize Student objects.
+		boolean fileReadStatus = studentManager.readFromFile("studentData.txt");
+		// Display all students.
+		studentManager.displayStudents();
+		// Search for a student by ID.
+		boolean studentFound = studentManager.searchStudentById(101);
+		// Update the grade of a student by ID.
+		boolean studentGradeUpdateStatus = studentManager.updateStudentGradeById(102, 95);
+		// Display all students after the update.
+		studentManager.displayStudents();
 		
 		 
 	}
