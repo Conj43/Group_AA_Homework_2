@@ -96,16 +96,20 @@ public boolean readFromFile(String fileName)
 	
 	// using the id we just got to identify the student we are going to update their grade 
 	public boolean updateStudentGradeById(int id, double grade) {
+		boolean test = searchStudentById(id); //use searchbystudentId function to make sure it exists
+		if(test) {
         Student student = search(id); //call the search function that returns a Student
         if (student != null) {
             student.setGrade(grade);
             return true; // Student found and updated
         }
         return false; // Student ID not found
+		}
+		else return false;
     }
 
 
-			}
+			
 
 //Display for Students:
 //method to display the details of all students in the current StudentManager class
