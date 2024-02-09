@@ -76,8 +76,10 @@ public boolean readFromFile(String fileName)
 
 }
 	
+
 		//search method used by updateStudentGradeByID
 		//made this function because it returns type Student, which makes more sense than returning type boolean 
+
 		 public Student search(int id) {
 			 // using a loop to iterate through the students to find the right one
 			 for (Student student : studentArray) {
@@ -86,8 +88,10 @@ public boolean readFromFile(String fileName)
 					 }
 				 }
 			 
+
 		        return null; // Student not found
 		       } 
+
 		    
 	
 	// using the id we just got to identify the student we are going to update their grade 
@@ -105,7 +109,8 @@ public boolean readFromFile(String fileName)
     }
 
 
-			
+			}
+
 //Display for Students:
 //method to display the details of all students in the current StudentManager class
 public void displayStudents() {
